@@ -1,0 +1,124 @@
+{
+  "nodes": {
+    "hjem": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1787500880,
+        "narHash": "sha256-UrAlku7KST0DT+j1bdVGYI8tCz23PWL88uGMer3IZ2U=",
+        "owner": "feel-co",
+        "repo": "hjem",
+        "rev": "d248f0e4f7abd6e1f0eb9ace778dd7928481943e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "feel-co",
+        "repo": "hjem",
+        "type": "github"
+      }
+    },
+    "hypr-config": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1788465686,
+        "narHash": "sha256-K5UXtm4LrlRYsS6Nglw/anu+lmdnNMkpMITyn4CyK5A=",
+        "owner": "Saber0324",
+        "repo": "hypr",
+        "rev": "6cd901f03e2dc29d9fb8fdb43054d16e31cb3472",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Saber0324",
+        "repo": "hypr",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1788404924,
+        "narHash": "sha256-lhEhY8X5EgkQ/eg6IFz4cc8jRuSYSvnxx1al7d1dvZ0=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "0968519e14f7aa7d3e9b389682bd74d2b51c8ce8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "noctalia": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1788556054,
+        "narHash": "sha256-vwtwiwj/cihQDNIPoBUYsbPOknEh7YrfK5XG/D+YmtY=",
+        "owner": "noctalia-dev",
+        "repo": "noctalia",
+        "rev": "4ea0a7f0c7d00ac559a1029ccf8d0d1270b23c08",
+        "type": "github"
+      },
+      "original": {
+        "owner": "noctalia-dev",
+        "repo": "noctalia",
+        "type": "github"
+      }
+    },
+    "noctalia-greeter": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1788554618,
+        "narHash": "sha256-yMCZXEalh0uWMDrOY6UKA8YXyxyaYB/DZkPfm8G5F6k=",
+        "owner": "noctalia-dev",
+        "repo": "noctalia-greeter",
+        "rev": "b80f98e95c442f7abde96a00cd715e5429f2bc42",
+        "type": "github"
+      },
+      "original": {
+        "owner": "noctalia-dev",
+        "repo": "noctalia-greeter",
+        "type": "github"
+      }
+    },
+    "nvim-config": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1788471725,
+        "narHash": "sha256-soevmCHyTLOKzCTC4XtFzRljLqoXCbPzVkVb8uHzkHk=",
+        "owner": "Saber0324",
+        "repo": "nvimconf",
+        "rev": "b0bdda068f8c24ca2918eff0c5e43f60966fb8a3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Saber0324",
+        "repo": "nvimconf",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "hjem": "hjem",
+        "hypr-config": "hypr-config",
+        "nixpkgs": "nixpkgs",
+        "noctalia": "noctalia",
+        "noctalia-greeter": "noctalia-greeter",
+        "nvim-config": "nvim-config"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

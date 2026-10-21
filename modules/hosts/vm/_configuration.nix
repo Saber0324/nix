@@ -66,10 +66,6 @@
       systemd.enable = true;
     };
 
-    noctalia-greeter = {
-      enable = true;
-    };
-
     zoxide.enable = true;
 
     fzf = {
@@ -188,22 +184,6 @@
     deadnix
     nixfmt
   ];
-
-  # Manage dotfiles
-  hjem.users.saber = {
-    directory = "/home/saber";
-
-    files = {
-      ".zshrc".text = "";
-      ".ssh/config".text = ''
-        Host github.com
-          HostName github.com
-          User git
-          IdentityFile ~/.ssh/id_ed25519
-          AddKeysToAgent yes
-      '';
-    };
-  };
 
   system.userActivationScripts.syncDotfiles.text = ''
     sync_repo() {

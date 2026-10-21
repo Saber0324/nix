@@ -23,6 +23,7 @@
     initrd.kernelModules = [ ];
     kernelModules = [ "kvm-amd" ];
     extraModulePackages = [ ];
+    loader.grub.device = "/dev/vda";
   };
 
   fileSystems."/" = {
@@ -30,6 +31,8 @@
     fsType = "ext4";
   };
 
+  services.qemuGuest.enable = true;
+  services.spice-vdagentd.enable = true;
   swapDevices = [ ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";

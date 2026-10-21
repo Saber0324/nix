@@ -3,11 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
-    hjem = {
-      url = "github:feel-co/hjem";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    import-tree.url = "github:vic/import-tree";
 
     noctalia = {
       url = "github:noctalia-dev/noctalia";
@@ -31,34 +28,5 @@
     };
   };
 
-  outputs =
-    {
-      self,
-      nixpkgs,
-      hjem,
-      noctalia,
-      noctalia-greeter,
-      ...
-    }@inputs:
-    {
-      nixosConfigurations = {
-        vm = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = { inherit inputs; };
-          modules = [
-            hjem.nixosModules.default
-            noctalia-greeter.nixosModules.default
-            ./hosts/vm/default.nix
-          ];
-        };
-        desktop = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          modules = [
-            hjem.nixosModules.default
-            noctalia-greeter.nixosModules.default
-            ./hosts/desktop/default.nix
-          ];
-        };
-      };
-    };
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 }

@@ -4,6 +4,7 @@
 {
   lib,
   modulesPath,
+  pkgs,
   ...
 }:
 
@@ -23,7 +24,13 @@
     initrd.kernelModules = [ ];
     kernelModules = [ "kvm-amd" ];
     extraModulePackages = [ ];
-    loader.grub.device = "/dev/vda";
+
+    loader.grub = {
+      enable = true;
+      useOSProber = true;
+      device = "/dev/vda";
+    };
+    kernelPackages = pkgs.linuxPackages_latest;
   };
 
   fileSystems."/" = {

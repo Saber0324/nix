@@ -16,15 +16,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Dotfiles
-    hypr-config = {
-      url = "github:Saber0324/hypr";
-      flake = false;
-    };
-
-    nvim-config = {
-      url = "github:Saber0324/nvimconf";
-      flake = false;
+    nix-wrapper-modules = {
+      url = "github:nix-community/nix-wrapper-modules";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 

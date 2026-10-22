@@ -1,0 +1,45 @@
+{
+  "Deref impl": {
+    "prefix": "deref",
+    "body": [
+      "impl std::ops::Deref for ${1:MyType} {",
+      "\ttype Target = ${2:Inner};",
+      "",
+      "\tfn deref(&self) -> &Self::Target {",
+      "\t\t&self.${3:field}",
+      "\t}",
+      "}"
+    ],
+    "description": "Implement Deref"
+  },
+  "DerefMut impl": {
+    "prefix": "derefmut",
+    "body": [
+      "impl std::ops::DerefMut for ${1:MyType} {",
+      "\tfn deref_mut(&mut self) -> &mut Self::Target {",
+      "\t\t&mut self.${2:field}",
+      "\t}",
+      "}"
+    ],
+    "description": "Implement DerefMut"
+  },
+  "Deref + DerefMut pair": {
+    "prefix": "derefpair",
+    "body": [
+      "impl std::ops::Deref for ${1:MyType} {",
+      "\ttype Target = ${2:Inner};",
+      "",
+      "\tfn deref(&self) -> &Self::Target {",
+      "\t\t&self.${3:field}",
+      "\t}",
+      "}",
+      "",
+      "impl std::ops::DerefMut for $1 {",
+      "\tfn deref_mut(&mut self) -> &mut Self::Target {",
+      "\t\t&mut self.$3",
+      "\t}",
+      "}"
+    ],
+    "description": "Implement Deref and DerefMut"
+  }
+}

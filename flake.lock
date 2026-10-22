@@ -18,22 +18,6 @@
         "type": "github"
       }
     },
-    "hypr-config": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1788465686,
-        "narHash": "sha256-K5UXtm4LrlRYsS6Nglw/anu+lmdnNMkpMITyn4CyK5A=",
-        "owner": "Saber0324",
-        "repo": "hypr",
-        "rev": "6cd901f03e2dc29d9fb8fdb43054d16e31cb3472",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Saber0324",
-        "repo": "hypr",
-        "type": "github"
-      }
-    },
     "import-tree": {
       "locked": {
         "lastModified": 1788467110,
@@ -46,6 +30,26 @@
       "original": {
         "owner": "vic",
         "repo": "import-tree",
+        "type": "github"
+      }
+    },
+    "nix-wrapper-modules": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1792532408,
+        "narHash": "sha256-rasFTcWJo7CdUaCFcxcDTnMWlY6WxZo/X6EsbEqgIpM=",
+        "owner": "nix-community",
+        "repo": "nix-wrapper-modules",
+        "rev": "e40208b34e08f764e6b972eb0ee919706e960eb2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nix-wrapper-modules",
         "type": "github"
       }
     },
@@ -120,31 +124,14 @@
         "type": "github"
       }
     },
-    "nvim-config": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1788471725,
-        "narHash": "sha256-soevmCHyTLOKzCTC4XtFzRljLqoXCbPzVkVb8uHzkHk=",
-        "owner": "Saber0324",
-        "repo": "nvimconf",
-        "rev": "b0bdda068f8c24ca2918eff0c5e43f60966fb8a3",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Saber0324",
-        "repo": "nvimconf",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "flake-parts": "flake-parts",
-        "hypr-config": "hypr-config",
         "import-tree": "import-tree",
+        "nix-wrapper-modules": "nix-wrapper-modules",
         "nixpkgs": "nixpkgs",
         "noctalia": "noctalia",
-        "noctalia-greeter": "noctalia-greeter",
-        "nvim-config": "nvim-config"
+        "noctalia-greeter": "noctalia-greeter"
       }
     }
   },

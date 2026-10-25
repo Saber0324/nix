@@ -1,28 +1,33 @@
 { self, ... }: {
-  flake.nixosModules.cli = { pkgs, ... }: {
-    imports = with self.nixosModules; [
+  flake.homeModules.cli = { pkgs, ... }: {
+    imports = with self.homeModules; [
       git
       zsh
       ssh
-
       env
     ];
 
-    environment.systemPackages = with pkgs; [
+    home.packages = with pkgs; [
       eza
       fd
       ripgrep
       bat
-      zoxide
       unzip
-      wl-clipboard
       fastfetch
       wget
     ];
 
-    programs.fzf = {
-      keybindings = true;
-      fuzzyCompletion = true;
-    };
+    programs.fzf.enable = true;
+  };
+
+  flake.nixosModules.cli = { pkgs, ... }: {
+    imports = with self.nixosModules; [
+      zsh
+      ssh
+    ];
+
+    environment.systemPackages = with pkgs; [
+      wl-clipboard
+    ];
   };
 }

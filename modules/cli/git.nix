@@ -1,8 +1,8 @@
 { ... }: {
-  flake.nixosModules.git = {
+  flake.homeModules.git = {
     programs.git = {
       enable = true;
-      config = {
+      settings = {
         "url \"git@github.com:\"".pushInsteadOf = "https://github.com/";
       };
     };

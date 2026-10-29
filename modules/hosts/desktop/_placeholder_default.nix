@@ -1,17 +1,14 @@
-{ config, ... }: {
-  imports = [
-    ./hardware-configuration.nix
-    ../../configuration.nix
-  ];
-
-  networking.hostName = "desktop";
-
-  nixpkgs.config.allowUnfree = true;
-  hardware.graphics.enable = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia = {
-    modesetting.enable = true;
-    open = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+{ inputs, config, ... }: {
+  flake.nixosConfigurations.desktop = inputs.nixpkgs.lib.nixosSystem {
+    specialArgs = { inherit inputs; };
+    modules = with config.nixosModules; [
+      ./_hardware.nix
+      desktop
+      devenv
+      gaming
+      cli
+      neovim
+      nvidia
+    ];
   };
 }

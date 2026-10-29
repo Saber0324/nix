@@ -1,5 +1,5 @@
 { self, ... }: {
-  flake.nixosModules.desktop = { config, ... }: {
+  flake.nixosModules.desktop = { ... }: {
     imports = with self.nixosModules; [
       hyprland
       noctalia

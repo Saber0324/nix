@@ -4,8 +4,6 @@ _: {
       # Apps
       brave
       ghostty
-      steam
-
     ];
   };
 }

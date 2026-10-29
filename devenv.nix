@@ -2,10 +2,10 @@
   languages.nix.enable = true;
 
   packages = with pkgs; [
-    nixd # language server (alternative: nil)
-    nixfmt # formatter
-    statix # linter: anti-patterns and style
-    deadnix # finds unused bindings
+    nixd
+    nixfmt
+    statix
+    deadnix
   ];
 
   git-hooks.hooks = {
@@ -18,5 +18,15 @@
       excludes = [ "_hardware\\.nix$" ];
     };
     deadnix.enable = true;
+
+    flake-check = {
+      enable = true;
+      name = "nix flake check";
+      entry = "nix flake check";
+      language = "system";
+      pass_filenames = false;
+      always_run = true;
+      stages = [ "pre-push" ];
+    };
   };
 }

@@ -1,7 +1,9 @@
-flake.homeModules.devenv = { pkgs, ... }: {
-  home.packages = [ pkgs.devenv ];
+{ ... }: {
+  flake.homeModules.devenv = { pkgs, ... }: {
+    home.packages = [ pkgs.devenv ];
 
-  programs.zsh.initContent = ''
-    eval "$(devenv hook zsh)"
-  '';
+    programs.zsh.initContent = ''
+      eval "$(devenv hook zsh)"
+    '';
+  };
 }

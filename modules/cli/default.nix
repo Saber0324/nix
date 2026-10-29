@@ -22,8 +22,8 @@
 
   flake.nixosModules.cli = { pkgs, ... }: {
     imports = with self.nixosModules; [
-      zsh
       ssh
+      zsh
     ];
 
     environment.systemPackages = with pkgs; [

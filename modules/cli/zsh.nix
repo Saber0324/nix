@@ -22,6 +22,7 @@ _: {
         else
           fastfetch
         fi
+        eval "$(devenv hook zsh)"
       '';
 
       oh-my-zsh = {

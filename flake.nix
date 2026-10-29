@@ -3,11 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
-    hjem = {
-      url = "github:feel-co/hjem";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    import-tree.url = "github:vic/import-tree";
 
     noctalia = {
       url = "github:noctalia-dev/noctalia";
@@ -19,46 +16,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Dotfiles
-    hypr-config = {
-      url = "github:Saber0324/hypr";
-      flake = false;
+    nix-wrapper-modules = {
+      url = "github:nix-community/nix-wrapper-modules";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nvim-config = {
-      url = "github:Saber0324/nvimconf";
-      flake = false;
-    };
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };  
   };
 
-  outputs =
-    {
-      self,
-      nixpkgs,
-      hjem,
-      noctalia,
-      noctalia-greeter,
-      ...
-    }@inputs:
-    {
-      nixosConfigurations = {
-        vm = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = { inherit inputs; };
-          modules = [
-            hjem.nixosModules.default
-            noctalia-greeter.nixosModules.default
-            ./hosts/vm/default.nix
-          ];
-        };
-        desktop = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          modules = [
-            hjem.nixosModules.default
-            noctalia-greeter.nixosModules.default
-            ./hosts/desktop/default.nix
-          ];
-        };
-      };
-    };
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 }

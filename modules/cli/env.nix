@@ -1,4 +1,4 @@
-{ ... }: {
+_: {
   flake.homeModules.env = {
     home.sessionVariables = {
       EDITOR = "nvim";

@@ -1,4 +1,4 @@
-{ ... }: {
+_: {
   flake.nixosModules.locale = {
     time.timeZone = "America/Santo_Domingo";
 

@@ -1,4 +1,4 @@
-{ ... }: {
+_: {
   # Server
   flake.nixosModules.ssh = {
     services.openssh = {

@@ -1,6 +1,12 @@
-{ ... }: {
+_: {
   flake.homeModules.zsh = { pkgs, ... }: {
-    home.packages = with pkgs; [ eza bat fd ripgrep fastfetch ];
+    home.packages = with pkgs; [
+      eza
+      bat
+      fd
+      ripgrep
+      fastfetch
+    ];
 
     programs.zoxide.enable = true;
 
@@ -20,7 +26,12 @@
 
       oh-my-zsh = {
         enable = true;
-        plugins = [ "git" "sudo" "colored-man-pages" "extract" ];
+        plugins = [
+          "git"
+          "sudo"
+          "colored-man-pages"
+          "extract"
+        ];
         theme = "agnoster";
       };
 

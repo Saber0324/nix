@@ -20,7 +20,10 @@
           useUserPackages = true;
           backupFileExtension = "bak";
           users.saber = {
-            imports = with self.homeModules; [ cli devenv ];
+            imports = with self.homeModules; [
+              cli
+              devenv
+            ];
             home.stateVersion = "26.05";
           };
         };
